@@ -4,20 +4,17 @@ const URL_JuegosEspecifico = "https://www.freetogame.com/api/game";
 export async function getAllJuegos() {
   let data = await fetch(URL_Juegos + "?platform=all");
   let juegos = await data.json();
-  console.log(juegos);
   return juegos;
 }
 //Funcion que devuelve los juegos por fecha de salida
 export async function getJuegosByRelease() {
   let data = await fetch(URL_Juegos + "?sort-by=release-date");
   let juegos = await data.json();
-  console.log(juegos);
   return juegos;
 }
 //Sacar un juego especifico la url es distinta por eso la otra const
 export async function getSpecificGame(id) {
   let data = await fetch(URL_JuegosEspecifico + "?id=" + id);
   let juegos = await data.json();
-  console.log(juegos);
   return juegos;
 }
